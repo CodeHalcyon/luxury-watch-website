@@ -1,0 +1,188 @@
+/* Custom font imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    /* Light Theme Colors */
+    --color-bg-light: #F8F8F8;
+    --color-text-light: #1A1A1A;
+    --color-accent-light: #C5A059; /* Richer, slightly muted gold */
+    --color-glass-bg-light: rgba(255, 255, 255, 0.15);
+    --color-glass-border-light: rgba(255, 255, 255, 0.3);
+    --color-mobile-nav-text-light: #1A1A1A;
+
+    /* Dark Theme Colors */
+    --color-bg-dark: #070707; /* Deeper black */
+    --color-text-dark: #EAEAEA; /* Slightly brighter text for contrast */
+    --color-accent-dark: #D4AF37; /* Still bright gold for dark mode pop */
+    --color-glass-bg-dark: rgba(15, 15, 15, 0.3);
+    --color-glass-border-dark: rgba(255, 255, 255, 0.15);
+    --color-mobile-nav-text-dark: #EAEAEA;
+
+    /* Header height offset for sticky elements */
+    --header-height-offset: 8rem; /* Default for larger screens */
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height-offset: 4rem; /* Adjusted for mobile header */
+    }
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Default font */
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: var(--header-height-offset); /* ADDED: Ensures content doesn't scroll under fixed header */
+}
+
+/* Light Mode Styles */
+[data-theme="light"] body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+}
+
+[data-theme="light"] .glassmorphic {
+    background-color: var(--color-glass-bg-light);
+    border-color: var(--color-glass-border-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Lighter shadow for light theme */
+}
+
+[data-theme="light"] .text-accent {
+    color: var(--color-accent-light);
+}
+
+/* Dark Mode Styles (default) */
+.text-accent {
+    color: var(--color-accent-dark);
+}
+
+/* Glassmorphism Base Styles */
+.glassmorphic {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: var(--color-glass-bg-dark);
+    border: 1px solid var(--color-glass-border-dark);
+    border-radius: 0; /* Changed to 0 for full-width header, or remove if rounded-xl is desired */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Default dark shadow */
+    transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.3s ease;
+}
+
+/* Custom Fonts for Tailwind */
+.font-display { font-family: 'Playfair Display', serif; }
+.font-body { font-family: 'Roboto', sans-serif; }
+
+/* Hero parallax specific styles */
+.hero-parallax-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Added based on user request */
+    will-change: transform, filter, opacity; /* Optimize for GSAP transform, filter, opacity */
+}
+
+/* Custom scrollbar for aesthetics */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+}
+[data-theme="light"] ::-webkit-scrollbar-track {
+    background: var(--color-bg-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent-dark);
+    border-radius: 4px;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: var(--color-accent-light);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-dark); /* Keep accent color on hover */
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-light);
+}
+
+/* For prefers-reduced-motion */
+.no-transition * {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Styles for category tabs */
+.category-tab.active-tab {
+    color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+}
+[data-theme="light"] .category-tab.active-tab {
+    color: var(--color-accent-light);
+    border-color: var(--color-accent-light);
+}
+
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+    transition: none; /* Important to prevent theme transition on preloader itself */
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+[data-theme="light"] #preloader {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+}
+
+.preloader-brand {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    color: var(--color-text-dark);
+}
+
+[data-theme="light"] .preloader-brand {
+    color: var(--color-text-light);
+}
+
+.preloader-dynamic-text {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--color-accent-dark);
+    opacity: 0;
+    min-height: 3rem; /* Reserve space to prevent layout shift */
+    letter-spacing: 0.05em;
+}
+
+[data-theme="light"] .preloader-dynamic-text {
+    color: var(--color-accent-light);
+}
+
+/* Testimonial Slider Dots */
+.testimonial-dots .dot.active-dot {
+    background-color: var(--color-accent-dark);
+    transform: scale(1.2);
+}
+[data-theme="light"] .testimonial-dots .dot.active-dot {
+    background-color: var(--color-accent-light);
+}
+
+/* Mobile Nav Themeing */
+[data-theme="light"] #mobile-nav {
+    color: var(--color-mobile-nav-text-light);
+}
+
+#mobile-nav { /* Default dark theme */
+    color: var(--color-mobile-nav-text-dark);
+}

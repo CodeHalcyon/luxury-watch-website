@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Elite - Timeless Precision</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌚</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="overflow-x-hidden" data-theme="dark">
+    <!-- Preloader -->
+    <div id="preloader">
+        <h1 class="preloader-brand">Chronos Elite</h1>
+        <p class="preloader-dynamic-text"></p>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 flex justify-between items-center glassmorphic">
+        <div class="text-2xl md:text-3xl font-display font-bold text-accent">Chronos Elite</div>
+        <nav class="hidden md:flex space-x-8 font-body text-lg">
+            <a href="#collections" class="hover:text-accent transition-colors duration-300">Collections</a>
+            <a href="#heritage" class="hover:text-accent transition-colors duration-300">Heritage</a>
+            <a href="#vision" class="hover:text-accent transition-colors duration-300">Our Vision</a>
+            <a href="#craftsmanship" class="hover:text-accent transition-colors duration-300">Craftsmanship</a>
+            <a href="#materials" class="hover:text-accent transition-colors duration-300">Materials</a>
+            <a href="#boutiques" class="hover:text-accent transition-colors duration-300">Boutiques</a>
+            <a href="#testimonials" class="hover:text-accent transition-colors duration-300">Testimonials</a>
+            <a href="#footer" class="hover:text-accent transition-colors duration-300">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button id="theme-toggle" aria-label="Toggle dark/light theme" class="p-2 rounded-full hover:bg-white/10 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent">
+                <!-- Icon will be dynamically set by JS -->
+            </button>
+            <button id="mobile-menu-button" aria-label="Open mobile navigation" class="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent">
+                <svg class="w-6 h-6 text-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-nav" class="fixed inset-0 z-[9998] flex-col items-center justify-center space-y-8 font-display text-3xl hidden glassmorphic">
+        <button id="close-mobile-nav" aria-label="Close mobile navigation" class="absolute top-6 right-6 p-2 rounded-full hover:bg-white/10 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent">
+            <svg class="w-8 h-8 text-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a href="#collections" class="hover:text-accent transition-colors duration-300 mobile-nav-link">Collections</a>
+        <a href="#heritage" class="hover:text-accent transition-colors duration-300 mobile-nav-link">Heritage</a>
+        <a href="#vision" class="hover:text-accent transition-colors duration-300 mobile-nav-link">Our Vision</a>
+        <a href="#craftsmanship" class="hover:text-accent transition-colors duration-300 mobile-nav-link">Craftsmanship</a>
+        <a href="#materials" class="hover:text-accent transition-colors duration-300 mobile-nav-link">Materials</a>
+        <a href="#boutiques" class="hover:text-accent transition-colors duration-300 mobile-nav-link">Boutiques</a>
+        <a href="#testimonials" class="hover:text-accent transition-colors duration-300 mobile-nav-link">Testimonials</a>
+        <a href="#footer" class="hover:text-accent transition-colors duration-300 mobile-nav-link">Contact</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="hero-parallax-bg absolute inset-0 z-0" style="background-image: url('watch.jpg');" role="img" aria-label="A luxurious Chronos Elite watch"></div>
+            <div class="relative z-10 text-center p-8 bg-black/20 glassmorphic backdrop-blur-sm mx-4 md:mx-0">
+                <h1 class="text-5xl md:text-8xl font-display font-bold leading-tight text-white mb-4 hero-title">
+                    <span class="hero-title-word">Time,</span> <span class="text-accent hero-title-word">Reimagined.</span>
+                </h1>
+                <p class="text-lg md:text-2xl font-body text-white/90 max-w-3xl mx-auto hero-subtitle">
+                    Precision. Heritage. Legacy. Experience the pinnacle of Swiss watchmaking.
+                </p>
+                <a href="#collections" class="inline-block mt-8 px-8 py-3 bg-accent text-black font-body font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg hero-cta">
+                    Explore Collections
+                </a>
+            </div>
+        </section>
+
+        <!-- Brand Story / Heritage Section -->
+        <section id="heritage" class="py-20 md:py-32 px-4 md:px-12 lg:px-24 reveal-section">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 reveal-text">
+                    <h2 class="text-4xl md:text-6xl font-display font-bold leading-tight mb-6">
+                        A Legacy Forged in <span class="text-accent">Time.</span>
+                    </h2>
+                    <p class="font-body text-lg md:text-xl leading-relaxed mb-8">
+                        For generations, Chronos Elite has stood as a beacon of Swiss horological excellence. Our journey began in the heart of the Jura Mountains, where master watchmakers dedicated their lives to the pursuit of perfection. Each timepiece is a testament to an unwavering commitment to precision, artistry, and the enduring spirit of innovation.
+                    </p>
+                    <p class="font-body text-lg md:text-xl leading-relaxed mb-8">
+                        We honor the traditions of our ancestors while embracing cutting-edge technology, ensuring every Chronos Elite watch is not just an instrument of time, but a piece of living history, crafted to be passed down through generations.
+                    </p>
+                    <a href="#vision" class="inline-block px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                        Discover Our Story
+                    </a>
+                </div>
+                <div class="md:col-span-5 relative reveal-image">
+                    <div class="aspect-[3/4] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4">
+                        <img src="watch.jpg" alt="A Chronos Elite watch, symbolizing precision and heritage" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-accent/20 rounded-full blur-3xl opacity-50 -z-10 hidden md:block"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder's Vision Section -->
+        <section id="vision" class="py-20 md:py-32 px-4 md:px-12 lg:px-24 reveal-section">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5 relative reveal-image order-2 md:order-1">
+                    <div class="aspect-[3/4] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4">
+                        <img src="watch.jpg" alt="A Chronos Elite watch movement, symbolizing precision and vision" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                    </div>
+                    <div class="absolute -top-8 -left-8 w-48 h-48 bg-accent/20 rounded-full blur-3xl opacity-50 -z-10 hidden md:block"></div>
+                </div>
+                <div class="md:col-span-7 reveal-text order-1 md:order-2">
+                    <h2 class="text-4xl md:text-6xl font-display font-bold leading-tight mb-6">
+                        The <span class="text-accent">Vision</span> of a Pioneer.
+                    </h2>
+                    <p class="font-body text-lg md:text-xl leading-relaxed mb-8">
+                        Our founder, a true visionary, embarked on a mission to create timepieces that transcended mere functionality, becoming symbols of aspiration and enduring beauty. His philosophy, rooted in relentless innovation and uncompromising quality, continues to guide every facet of our creation process.
+                    </p>
+                    <p class="font-body text-lg md:text-xl leading-relaxed mb-8">
+                        From the initial sketch to the final polish, each Chronos Elite watch embodies a dedication to horological artistry that pushes boundaries while respecting the grand traditions of Swiss watchmaking.
+                    </p>
+                    <a href="#craftsmanship" class="inline-block px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                        Our Philosophy
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collections Section with Categories and Alternating Layout -->
+        <section id="collections" class="py-20 md:py-32 px-4 md:px-12 lg:px-24 reveal-section">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-display font-bold text-center mb-16 reveal-text">
+                    Our <span class="text-accent">Collections.</span> Defined by Excellence.
+                </h2>
+
+                <!-- Category Navigation -->
+                <nav class="flex justify-center space-x-4 md:space-x-8 mb-12 reveal-text">
+                    <button class="category-tab px-6 py-2 border-b-2 border-transparent text-lg font-body font-semibold hover:text-accent transition-colors duration-300 active-tab" data-category="grand-complications">Grand Complications</button>
+                    <button class="category-tab px-6 py-2 border-b-2 border-transparent text-lg font-body font-semibold hover:text-accent transition-colors duration-300" data-category="classic-elegance">Classic Elegance</button>
+                    <button class="category-tab px-6 py-2 border-b-2 border-transparent text-lg font-body font-semibold hover:text-accent transition-colors duration-300" data-category="sport-chronographs">Sport Chronographs</button>
+                </nav>
+
+                <!-- Product Grids for Categories with Alternating Layout -->
+                <div id="category-content">
+                    <!-- Grand Complications -->
+                    <div id="grand-complications" class="category-grid hidden">
+                        <!-- Item 1: Left Story, Right Image -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Celestial Tourbillon <span class="text-accent text-base align-top ml-2">Featured</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    A horological marvel, featuring a mesmerizing flying tourbillon and perpetual calendar, representing the pinnacle of our grand complications. Its intricate movement is a dance of precision and artistry.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    Discover This Masterpiece
+                                </button>
+                            </div>
+                            <div class="md:order-2 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Grand Complications collection" loading="lazy" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Left Image, Right Story -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Grand Complications collection" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                                </div>
+                            </div>
+                            <div class="md:order-2 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Grand Repeater <span class="text-accent text-base align-top ml-2">Minute Repeater</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    An auditory masterpiece, chiming the time with exquisite clarity and precision. Each chime is a meticulously engineered melody, a testament to the highest form of horological art.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Left Story, Right Image -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Astronomic Regulator <span class="text-accent text-base align-top ml-2">Astronomic</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    Charting the cosmos with precision, featuring a celestial map and moon phase. This timepiece is a miniature observatory, bringing the wonders of the universe to your wrist.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                            <div class="md:order-2 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Grand Complications collection" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Classic Elegance -->
+                    <div id="classic-elegance" class="category-grid hidden">
+                        <!-- Item 1: Left Story, Right Image -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Heritage Dress <span class="text-accent text-base align-top ml-2">Timeless</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    Understated elegance, a perfect companion for the most discerning occasions. This iconic piece embodies the true spirit of classic watchmaking, a symbol of refined taste.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    Discover This Classic
+                                </button>
+                            </div>
+                            <div class="md:order-2 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Classic Elegance collection" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Left Image, Right Story -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Classic Elegance collection" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                                </div>
+                            </div>
+                            <div class="md:order-2 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Serenity Automatic <span class="text-accent text-base align-top ml-2">Automatic</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    A harmonious blend of classic design and modern automatic movement. Its self-winding mechanism ensures precision without compromise, a testament to enduring innovation.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Left Story, Right Image -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Lumina <span class="text-accent text-base align-top ml-2">Radiant</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    Radiant and refined, with a moon phase complication and diamond-set bezel. The Lumina captures the ethereal beauty of the night sky, a dazzling display of craftsmanship.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                            <div class="md:order-2 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Classic Elegance collection" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sport Chronographs -->
+                    <div id="sport-chronographs" class="category-grid hidden">
+                        <!-- Item 1: Left Story, Right Image -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Apex Chrono <span class="text-accent text-base align-top ml-2">Performance</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    Engineered for performance, with a robust chronograph movement and tachymeter. The ultimate companion for those who push boundaries, combining precision with rugged elegance.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    Explore Performance
+                                </button>
+                            </div>
+                            <div class="md:order-2 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Sport Chronographs collection" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Left Image, Right Story -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Sport Chronographs collection" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                                </div>
+                            </div>
+                            <div class="md:order-2 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Diver's Master <span class="text-accent text-base align-top ml-2">Diver's</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    Built for the depths, with extreme water resistance and a luminous dial. This robust timepiece is engineered to perform flawlessly in the most challenging underwater environments.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Left Story, Right Story -->
+                        <div class="collection-item grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-24 reveal-section">
+                            <div class="md:order-1 reveal-text">
+                                <h3 class="text-3xl md:text-4xl font-display font-bold mb-4">The Apex <span class="text-accent text-base align-top ml-2">Titanium</span></h3>
+                                <p class="font-body text-lg leading-relaxed mb-6">
+                                    The ultimate expression of power and elegance, crafted from aerospace-grade titanium. Its lightweight yet incredibly strong construction makes it ideal for the active connoisseur.
+                                </p>
+                                <button class="px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                            <div class="md:order-2 reveal-image">
+                                <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4 collection-image-wrapper">
+                                    <img src="watch.jpg" alt="A Chronos Elite watch from the Sport Chronographs collection" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Craftsmanship Section (Asymmetrical Grid) -->
+        <section id="craftsmanship" class="py-20 md:py-32 px-4 md:px-12 lg:px-24 reveal-section">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-10 mx-auto reveal-text text-center md:text-left">
+                    <h2 class="text-4xl md:text-6xl font-display font-bold leading-tight mb-6">
+                        The Art of <span class="text-accent">Precision.</span>
+                    </h2>
+                    <p class="font-body text-lg md:text-xl leading-relaxed mb-8">
+                        Every Chronos Elite timepiece is a symphony of hundreds of meticulously crafted components, each polished, assembled, and regulated by hand. Our artisans, with decades of experience, bring an unparalleled level of dedication to every detail, ensuring flawless performance and breathtaking aesthetics.
+                    </p>
+                    <p class="font-body text-lg md:text-xl leading-relaxed mb-8">
+                        From the intricate gears of the movement to the exquisite finish of the case, our commitment to precision engineering and traditional craftsmanship is evident in every tick. This is not merely watchmaking; it is an art form.
+                    </p>
+                    <a href="#materials" class="inline-block px-6 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">
+                        Explore Our Workshop
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materials & Innovation Section -->
+        <section id="materials" class="py-20 md:py-32 reveal-section relative overflow-hidden">
+            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('watch.jpg'); opacity: 0.05;" aria-hidden="true"></div>
+            <div class="max-w-7xl mx-auto relative z-10 px-4 md:px-12 lg:px-24">
+                <h2 class="text-4xl md:text-6xl font-display font-bold text-center mb-16 reveal-text">
+                    Exquisite <span class="text-accent">Materials</span> & Innovation.
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="flex flex-col space-y-12">
+                        <div class="reveal-text">
+                            <h3 class="text-3xl font-display font-bold mb-4">Sapphire Crystal</h3>
+                            <p class="font-body text-lg leading-relaxed">Virtually scratch-proof, our sapphire crystals are meticulously cut and polished for unparalleled clarity and durability. Each crystal undergoes rigorous testing to ensure it meets our exacting standards, providing a window into the heart of our timepieces.</p>
+                        </div>
+                        <div class="reveal-text">
+                            <h3 class="text-3xl font-display font-bold mb-4">Precious Metals</h3>
+                            <p class="font-body text-lg leading-relaxed">From 18k gold to platinum, each case is forged from ethically sourced, high-grade metals, ensuring lasting brilliance and value. Our commitment extends to responsible sourcing, guaranteeing both luxury and integrity.</p>
+                        </div>
+                        <div class="reveal-text">
+                            <h3 class="text-3xl font-display font-bold mb-4">Advanced Alloys</h3>
+                            <p class="font-body text-lg leading-relaxed">Pioneering new frontiers with aerospace-grade titanium and proprietary alloys for exceptional strength and lightness. These materials are chosen for their superior performance and ability to withstand the test of time, just like our watches.</p>
+                        </div>
+                    </div>
+                    <div class="relative reveal-image">
+                        <div class="aspect-[4/5] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4">
+                            <img src="watch.jpg" alt="A Chronos Elite watch, showcasing intricate details and materials" loading="lazy" class="object-cover w-full h-full rounded-lg">
+                        </div>
+                        <div class="absolute -bottom-12 -right-12 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50 -z-10 hidden lg:block"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Boutiques Section -->
+        <section id="boutiques" class="py-20 md:py-32 relative overflow-hidden reveal-section">
+            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('watch.jpg'); opacity: 0.1;" aria-hidden="true"></div>
+            <div class="max-w-7xl mx-auto relative z-10 px-4 md:px-12 lg:px-24">
+                <h2 class="text-4xl md:text-6xl font-display font-bold text-center mb-16 reveal-text">
+                    Our Global <span class="text-accent">Boutiques.</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                    <div class="reveal-image">
+                        <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4">
+                            <img src="watch.jpg" alt="A Chronos Elite watch display in a luxury boutique" loading="lazy" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div class="mt-8 text-center md:text-left reveal-text">
+                            <h3 class="text-3xl font-display font-bold mb-2">Paris Flagship</h3>
+                            <p class="font-body text-lg leading-relaxed text-white/80">Experience haute horlogerie on Rue de la Paix, where elegance meets innovation. Our Paris boutique offers an exclusive journey into the world of Chronos Elite, with personalized consultations and a curated selection of our finest timepieces.</p>
+                            <a href="#" class="inline-block mt-6 px-8 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">Visit Paris</a>
+                        </div>
+                    </div>
+                    <div class="reveal-image">
+                        <div class="aspect-[16/9] overflow-hidden rounded-xl shadow-2xl glassmorphic p-4">
+                            <img src="watch.jpg" alt="A Chronos Elite watch display in a luxury boutique" loading="lazy" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div class="mt-8 text-center md:text-left reveal-text">
+                            <h3 class="text-3xl font-display font-bold mb-2">Tokyo Salon</h3>
+                            <p class="font-body text-lg leading-relaxed text-white/80">A serene sanctuary in Ginza, showcasing the pinnacle of Swiss watchmaking. Immerse yourself in a tranquil atmosphere designed for contemplation and appreciation of our exquisite craftsmanship.</p>
+                            <a href="#" class="inline-block mt-6 px-8 py-3 border-2 border-accent text-accent font-body font-semibold rounded-full hover:bg-accent hover:text-black transition-colors duration-300">Visit Tokyo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-20 reveal-cta">
+                    <p class="font-body text-xl leading-relaxed mb-8 max-w-3xl mx-auto">Discover our full network of exclusive boutiques and experience the world of Chronos Elite in person.</p>
+                    <a href="#visit-us" class="inline-block px-10 py-4 bg-accent text-black font-body font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg">
+                        Find Your Nearest Boutique
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonials Section -->
+        <section id="testimonials" class="py-20 md:py-32 px-4 md:px-12 lg:px-24 relative overflow-hidden reveal-section">
+            <div class="absolute inset-0 z-0" style="background-image: url('watch.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0.1;" aria-hidden="true"></div>
+            <div class="max-w-5xl mx-auto relative z-10 text-center">
+                <h2 class="text-4xl md:text-6xl font-display font-bold mb-16 reveal-text">
+                    What Our <span class="text-accent">Clients Say.</span>
+                </h2>
+                <div class="testimonial-slider relative">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide glassmorphic p-8 md:p-12 flex flex-col items-center justify-center reveal-text">
+                        <p class="font-body text-xl md:text-2xl italic leading-relaxed mb-8 flex-grow">
+                            "Owning a Chronos Elite is more than just telling time; it's wearing a piece of art, a testament to enduring quality and exquisite design. Truly unparalleled, it has become a cherished part of my daily life."
+                        </p>
+                        <p class="font-display font-bold text-accent text-2xl md:text-3xl">— Alexander V., Collector</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide glassmorphic p-8 md:p-12 flex flex-col items-center justify-center reveal-text hidden">
+                        <p class="font-body text-xl md:text-2xl italic leading-relaxed mb-8 flex-grow">
+                            "The precision and craftsmanship are simply breathtaking. My Grand Repeater is a constant source of admiration and a cherished family heirloom in the making, a true marvel of horology."
+                        </p>
+                        <p class="font-display font-bold text-accent text-2xl md:text-3xl">— Dr. Evelyn Reed, Connoisseur</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide glassmorphic p-8 md:p-12 flex flex-col items-center justify-center reveal-text hidden">
+                        <p class="font-body text-xl md:text-2xl italic leading-relaxed mb-8 flex-grow">
+                            "From the moment I put on my Apex Chrono, I felt the difference. It's robust, elegant, and performs flawlessly under any condition. A masterpiece that truly stands out."
+                        </p>
+                        <p class="font-display font-bold text-accent text-2xl md:text-3xl">— Captain Marcus Thorne, Adventurer</p>
+                    </div>
+                </div>
+                <div class="testimonial-dots mt-10 flex justify-center space-x-4 reveal-cta">
+                    <button class="dot w-3 h-3 rounded-full bg-accent/50 hover:bg-accent transition-colors duration-300 active-dot" data-index="0" aria-label="Go to testimonial 1"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-accent/50 hover:bg-accent transition-colors duration-300" data-index="1" aria-label="Go to testimonial 2"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-accent/50 hover:bg-accent transition-colors duration-300" data-index="2" aria-label="Go to testimonial 3"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action / Visit Boutique -->
+        <section id="visit-us" class="py-20 md:py-32 px-4 md:px-12 lg:px-24 text-center reveal-section">
+            <div class="max-w-4xl mx-auto glassmorphic p-8 md:p-12">
+                <h2 class="text-4xl md:text-6xl font-display font-bold leading-tight mb-6 reveal-text">
+                    Experience Chronos Elite <span class="text-accent">Firsthand.</span>
+                </h2>
+                <p class="font-body text-lg md:text-xl leading-relaxed mb-10 reveal-text">
+                    We invite you to discover the unparalleled craftsmanship and timeless elegance of Chronos Elite at one of our exclusive boutiques worldwide.
+                </p>
+                <a href="#boutiques" class="inline-block px-10 py-4 bg-accent text-black font-body font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg reveal-cta">
+                    Find a Boutique
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-12 md:py-16 px-4 md:px-12 lg:px-24 glassmorphic mt-16">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div>
+                <h3 class="text-2xl font-display font-bold text-accent mb-4">Chronos Elite</h3>
+                <p class="font-body text-sm leading-relaxed">
+                    Crafting timeless precision since 1948. <br> Swiss Made. Globally Cherished.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-lg font-display font-bold mb-4">Collections</h4>
+                <ul class="space-y-2 font-body text-sm">
+                    <li><a href="#grand-complications" class="hover:text-accent transition-colors duration-300">Grand Complications</a></li>
+                    <li><a href="#classic-elegance" class="hover:text-accent transition-colors duration-300">Classic Elegance</a></li>
+                    <li><a href="#sport-chronographs" class="hover:text-accent transition-colors duration-300">Sport Chronographs</a></li>
+                    <li><a href="#collections" class="hover:text-accent transition-colors duration-300">View All</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-display font-bold mb-4">Company</h4>
+                <ul class="space-y-2 font-body text-sm">
+                    <li><a href="#heritage" class="hover:text-accent transition-colors duration-300">Our Heritage</a></li>
+                    <li><a href="#vision" class="hover:text-accent transition-colors duration-300">Our Vision</a></li>
+                    <li><a href="#craftsmanship" class="hover:text-accent transition-colors duration-300">Craftsmanship</a></li>
+                    <li><a href="#materials" class="hover:text-accent transition-colors duration-300">Materials</a></li>
+                    <li><a href="#boutiques" class="hover:text-accent transition-colors duration-300">Boutiques</a></li>
+                    <li><a href="#testimonials" class="hover:text-accent transition-colors duration-300">Testimonials</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-display font-bold mb-4">Connect</h4>
+                <ul class="space-y-2 font-body text-sm">
+                    <li><a href="#" class="hover:text-accent transition-colors duration-300">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors duration-300">Careers</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors duration-300">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors duration-300">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 mt-8 text-center text-sm font-body">
+            &copy; 2024 Chronos Elite. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
